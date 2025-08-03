@@ -31,20 +31,30 @@ fabricApi {
 }
 
 repositories {
-    // Add repositories to retrieve artifacts from in here.
-    // You should only use this when depending on other mods because
-    // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
-    // See https://docs.gradle.org/current/userguide/declaring_repositories.html
-    // for more information about repositories.
+
+    maven {
+        name = "Configuration"
+        setUrl("https://api.repsy.io/mvn/toma/public/")
+    }
+
+    maven {
+        name = "Terraformers"
+        setUrl("https://maven.terraformersmc.com/")
+    }
 }
 
 dependencies {
-    // To change the versions see the gradle.properties file
     minecraft("com.mojang:minecraft:${project.property("minecraft_version")}")
     mappings(loom.officialMojangMappings())
     modImplementation("net.fabricmc:fabric-loader:${project.property("loader_version")}")
     modImplementation("net.fabricmc:fabric-language-kotlin:${project.property("kotlin_loader_version")}")
 
+    modApi("net.fabricmc.fabric-api:fabric-api:${project.property("fabric_version")}")
+
+    modCompileOnly("dev.toma.configuration:configuration-${project.property("minecraft_version")}:3.1.1-common")
+    modRuntimeOnly("dev.toma.configuration:configuration-${project.property("minecraft_version")}:3.1.1-fabric")
+
+    modRuntimeOnly("com.terraformersmc:modmenu:13.0.3")
 }
 
 tasks.processResources {

@@ -4,8 +4,12 @@
   "package": "cn.dancingsnow.bdct.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "GuiGraphicsMixin",
+    "ItemStackMixin"
   ],
   "client": [
+    "KeyMappingAccessor",
+    "MouseHandlerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
