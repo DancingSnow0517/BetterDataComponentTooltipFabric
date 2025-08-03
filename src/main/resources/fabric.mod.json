@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "bdct",
+  "version": "${version}",
+  "name": "BetterDataComponentTooltipFabric",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "LGPL-3.0",
+  "icon": "assets/bdct/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "fabric-datagen": [
+      "cn.dancingsnow.bdct.client.BetterDataComponentTooltipDataGenerator"
+    ],
+    "main": [
+      "cn.dancingsnow.bdct.BetterDataComponentTooltip"
+    ]
+  },
+  "mixins": [
+    "bdct.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-language-kotlin": ">=${kotlin_loader_version}",
+    "minecraft": "${minecraft_version}"
+  }
+}
