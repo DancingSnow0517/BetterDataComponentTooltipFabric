@@ -56,6 +56,6 @@ public abstract class GuiGraphicsMixin {
         if (vec != null) {
             return vec;
         }
-        return original.call(instance, screenHeight, screenHeight, x, y, tooltipWidth, tooltipHeight);
+        return original.call(instance, screenWidth, screenHeight, x, y, tooltipWidth, tooltipHeight);
     }
 }
